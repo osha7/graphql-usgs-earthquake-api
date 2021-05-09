@@ -1,8 +1,18 @@
 const { ApolloServer } = require('apollo-server');
 // type definitions:
 const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
 
-const server = new ApolloServer({ typeDefs });
+const EarthquakeAPI = require('./datasources/earthquake');
+
+// const server = new ApolloServer({ typeDefs });
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    dataSources: () => ({
+        earthquakeAPI: new EarthquakeAPI()
+    })
+});
 
 // server.listen().then(() => {
 //     console.log(`
