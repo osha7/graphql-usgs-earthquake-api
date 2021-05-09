@@ -22,7 +22,7 @@ const typeDefs = gql`
         username: String!
         email: String!
         password: String!
-        records: [Earthquake]!
+        records: [Earthquake]
     }
     type Mutation {
         # if false, saving record failed -- check errors
