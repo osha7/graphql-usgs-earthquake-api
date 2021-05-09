@@ -6,7 +6,7 @@ class EarthquakeAPI extends RESTDataSource {
         this.baseURL = 'https://earthquake.usgs.gov/fdsnws/event/1/';
     }
 
-    async getAlEarthquakes() {
+    async getAllEarthquakes() {
         const query = await this.get(
             'query?format=geojson&starttime=2021-05-07&endtime=2021-05-08'
         ); //the query path to add on to the url

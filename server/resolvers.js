@@ -1,9 +1,10 @@
 module.exports = {
     Query: {
-        launches: (_, __, { dataSources }) =>
-            dataSources.launchAPI.getAllLaunches(),
-        launch: (_, { id }, { dataSources }) =>
-            dataSources.launchAPI.getLaunchById({ launchId: id }),
-        me: (_, __, { dataSources }) => dataSources.userAPI.findOrCreateUser()
+        earthquakes: (_, __, { dataSources }) =>
+            dataSources.earthquakeAPI.getAllEarthquakes(),
+        earthquake: (_, { id }, { dataSources }) =>
+            dataSources.earthquakeAPI.getEarthquakeById({ earthquakeId: id })
+        // if we needed to query for current user:
+        // me: (_, __, { dataSources }) => dataSources.userAPI.findOrCreateUser()
     }
 };
