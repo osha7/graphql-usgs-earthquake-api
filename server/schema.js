@@ -2,11 +2,13 @@ const { gql } = require('apollo-server');
 
 // our schema will go here below between the backticks: using the schema definition language
 const typeDefs = gql`
-# ! --> means non-nullible --> which means it's required
+    # ! --> means non-nullible --> which means it's required
     type Query {
         # Get a list of quakes:
         earthquakes: [Earthquake]!
         earthquake(id: ID!): Earthquake
+        # Queries for users:
+        users: [User]
         # Queries for the current user:
         me: User
     }
